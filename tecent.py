@@ -15,7 +15,7 @@ class TecentDoc(object):
         super().__init__()
         chrome_options = Options()
         chrome_options.add_experimental_option('excludeSwitches', ['enable-logging'])
-        # chrome_options.add_argument('--headless')
+        chrome_options.add_argument('--headless')
         self.browser = webdriver.Chrome(chrome_options=chrome_options)
         self.wait = WebDriverWait(self.browser,20)
 

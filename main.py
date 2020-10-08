@@ -112,7 +112,7 @@ if __name__ == "__main__":
     # # function test
     # check_and_confirm(3)
     # check_and_upload(2)
-    # get_unchecked_list(3)
+    # get_unchecked_list(2)
     # change_dir_by_time(2)
     # sys.exit()
     # for i in range(10):
