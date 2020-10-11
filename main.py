@@ -10,7 +10,7 @@ from jlu import jlu_check, jlu_check_old
 from xzc import change_dir_name, upload_file
 from baidu import get_file_list
 from weixin import send_text
-from tecent import tecent_confirm, tecent_replace, tecent_get_unchecked, TecentDoc
+from tecent import TecentDoc
 import sys
 
 
@@ -110,11 +110,13 @@ if __name__ == "__main__":
 
 
     # # function test
-    # check_and_confirm(3)
+    check_and_confirm(4)
     # check_and_upload(2)
-    # get_unchecked_list(2)
+    # get_unchecked_list(4)
+    # print(tecent.get_unchecked())
+    # send_checked_info()
     # change_dir_by_time(2)
-    # sys.exit()
+    sys.exit()
     # for i in range(10):
     #     tecent.confirm(NAME_PART2)
     # sys.exit()

@@ -15,7 +15,8 @@ import requests
 
 
 # 模拟打卡相关部分
-JLU_CHECK_URL = "https://ehall.jlu.edu.cn/jlu_portal/index" # 健康打卡系统登录页
+JLU_LOGIN_URL = "https://ehall.jlu.edu.cn/jlu_portal/index" # 健康打卡系统登录页
+JLU_CHECK_URL = "https://ehall.jlu.edu.cn/infoplus/form/YJSMRDK/start" # 健康打卡系统表单页
 
 
 
@@ -33,26 +34,28 @@ def jlu_check(username, password, major, grade, campus, apartment, bedroom, mast
     try:
         chrome_options = Options()
         chrome_options.add_experimental_option('excludeSwitches', ['enable-logging'])
-        chrome_options.add_argument('--headless')
+        # chrome_options.add_argument('--headless')
         browser = webdriver.Chrome(chrome_options=chrome_options)
         wait = WebDriverWait(browser, 30)
-        browser.get(JLU_CHECK_URL)
+        browser.get(JLU_LOGIN_URL)
 
         #  login
         wait.until(EC.presence_of_element_located((By.ID, "username"))).send_keys(username)
         wait.until(EC.presence_of_element_located((By.ID, "password"))).send_keys(password)
         wait.until(EC.element_to_be_clickable((By.ID, "login-submit"))).click()
 
-        ### more
-        # 更多服务
-        wait.until(EC.element_to_be_clickable((By.CSS_SELECTOR, ".student-tabList > ul > li:nth-of-type(9) > a"))).click()
+        # ### more
+        # # 更多服务
+        # wait.until(EC.element_to_be_clickable((By.CSS_SELECTOR, ".student-tabList > ul > li:nth-of-type(6) > a"))).click()
 
-        ### check
-        # 研究生每日打卡
-        wait.until(EC.element_to_be_clickable((By.CSS_SELECTOR, 'div.alk-service-nav > h2.alk-service-nav-title > a[title="研究生每日打卡"]'))).click()
+        # ### check
+        # # 研究生每日打卡
+        # wait.until(EC.element_to_be_clickable((By.CSS_SELECTOR, 'div.alk-service-nav > h2.alk-service-nav-title > a[title="研究生每日打卡"]'))).click()
 
-        # 我要办理
-        wait.until(EC.element_to_be_clickable((By.CSS_SELECTOR, "div.guide_title_center > input.bt_2[value='我要办理']"))).click()
+        # # 我要办理
+        # wait.until(EC.element_to_be_clickable((By.CSS_SELECTOR, "div.guide_title_center > input.bt_2[value='我要办理']"))).click()
+
+        browser.get(JLU_CHECK_URL)
 
         # close window
         handles = browser.window_handles
