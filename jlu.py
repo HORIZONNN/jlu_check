@@ -34,7 +34,7 @@ def jlu_check(username, password, major, grade, campus, apartment, bedroom, mast
     try:
         chrome_options = Options()
         chrome_options.add_experimental_option('excludeSwitches', ['enable-logging'])
-        # chrome_options.add_argument('--headless')
+        chrome_options.add_argument('--headless')
         browser = webdriver.Chrome(chrome_options=chrome_options)
         wait = WebDriverWait(browser, 30)
         browser.get(JLU_LOGIN_URL)

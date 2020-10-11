@@ -5,7 +5,7 @@ import traceback
 import time
 import pandas as pd
 
-from main_config import *
+from my_main_config import *
 from jlu import jlu_check, jlu_check_old
 from xzc import change_dir_name, upload_file
 from baidu import get_file_list
@@ -110,13 +110,13 @@ if __name__ == "__main__":
 
 
     # # function test
-    check_and_confirm(4)
+    # check_and_confirm(4)
     # check_and_upload(2)
     # get_unchecked_list(4)
     # print(tecent.get_unchecked())
     # send_checked_info()
     # change_dir_by_time(2)
-    sys.exit()
+    # sys.exit()
     # for i in range(10):
     #     tecent.confirm(NAME_PART2)
     # sys.exit()
